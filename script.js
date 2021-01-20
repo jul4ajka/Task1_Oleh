@@ -1,18 +1,24 @@
 // Скільки цифр в числі n
 
 const quantity = n => {
-  return n.toString().split('').length
+  if (n > 0) {
+    return n.toString().split('').length
+  }
+  return console.log('Not a natural number')
 }
 
-console.log(quantity(1000000))
+console.log(quantity(-10))
 
 // Чому рівна сума чисел n
 
 const sum = n => {
-  return n
-    .toString()
-    .split('')
-    .reduce((acc, num) => acc + +num, 0)
+  if (n > 0) {
+    return n
+      .toString()
+      .split('')
+      .reduce((acc, num) => acc + +num, 0)
+  }
+  return console.log('Not a natural number')
 }
 
 console.log(sum(12345))
@@ -32,4 +38,4 @@ const isPerfect = num => {
   return false
 }
 
-console.log(isPerfect(6))
+console.log(isPerfect(1234))
